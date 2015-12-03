@@ -12,7 +12,7 @@
 #include <string.h> // strlen()
 #include <unistd.h> // gethostname(), write()
 #include <stdlib.h>
-#include "hangman.h"
+#include "../include/hangman.h"
 
 char *word[] = {
 #include "words"
