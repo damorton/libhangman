@@ -13,8 +13,6 @@ ExternalProject_Add(libsocket
     PREFIX ${libsocket_PREFIX}
     GIT_REPOSITORY https://github.com/damorton/libsocket.git
 
-    INSTALL_COMMAND ""
-
     SOURCE_DIR ${libsocket_SOURCE_DIR}
 )
 
@@ -34,10 +32,11 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 # Create shared library
 add_library(hangman SHARED ${SOURCES})
 
+# Add dependencies for lib
 add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
 target_link_libraries(hangman ${PROJECT_LINK_LIBS})
 
-# Install the library to /usr/lib
+# Install the library to /usr/local/lib
 install(TARGETS hangman DESTINATION lib)
