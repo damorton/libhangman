@@ -23,7 +23,13 @@ include_directories(${libsocket_SOURCE_DIR}/include)
 set(SOURCES src/hangman.c)
 
 # Linker options
-set(PROJECT_LINK_LIBS libsocket)
+# Don't mistake osx for unix
+if(UNIX AND NOT APPLE)
+  set(PROJECT_LINK_LIBS libsocket.so)
+else()
+  set(PROJECT_LINK_LIBS libsocket.dylib)
+endif()
+
 link_directories(${libsocket_SOURCE_DIR}/lib)
 
 #Build the library into the lib folder
