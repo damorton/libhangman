@@ -42,4 +42,4 @@ add_dependencies(hangman libsocket)
 target_link_libraries(hangman ${libsocket_SOURCE_DIR}/lib/${PROJECT_LINK_LIBS})
 
 # Install the library to /usr/local/lib
-#install(TARGETS hangman DESTINATION lib)
+install(TARGETS hangman DESTINATION lib)
