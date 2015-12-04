@@ -12,7 +12,7 @@ set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
 ExternalProject_Add(libsocket
     PREFIX ${libsocket_PREFIX}
     GIT_REPOSITORY https://github.com/damorton/libsocket.git
-
+    INSTALL_COMMAND ""
     SOURCE_DIR ${libsocket_SOURCE_DIR}
 )
 
