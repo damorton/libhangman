@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.4)
 project(libhangman)
 include(ExternalProject)
 
-# Mac OSX config for build
-#set(CMAKE_MACOSX_RPATH 1)
-#set(CMAKE_BUILD_TYPE Release)
-
 set(libsocket_PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libsocket)
 set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
 
@@ -30,7 +26,7 @@ else()
   set(PROJECT_LINK_LIBS libsocket.dylib)
 endif()
 
-link_directories(${CMAKE_SOURCE_DIR}/external/libsocket/lib)
+#link_directories(${CMAKE_SOURCE_DIR}/external/libsocket/lib)
 
 #Build the library into the lib folder
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
@@ -42,7 +38,7 @@ add_library(hangman SHARED ${SOURCES})
 add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
-target_link_libraries(hangman ${PROJECT_LINK_LIBS})
+target_link_libraries(hangman external/libsocket/lib/${PROJECT_LINK_LIBS})
 
 # Install the library to /usr/local/lib
 #install(TARGETS hangman DESTINATION lib)
