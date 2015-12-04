@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.4)
 project(libhangman)
 include(ExternalProject)
 
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 set(libsocket_PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libsocket)
 set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
 
