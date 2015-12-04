@@ -30,7 +30,7 @@ else()
   set(PROJECT_LINK_LIBS libsocket.dylib)
 endif()
 
-link_directories(${libsocket_SOURCE_DIR}/lib)
+link_directories(${CMAKE_SOURCE_DIR}/external/libsocket/lib)
 
 #Build the library into the lib folder
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
