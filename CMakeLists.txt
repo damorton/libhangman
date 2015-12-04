@@ -3,8 +3,8 @@ project(libhangman)
 include(ExternalProject)
 
 # Mac OSX config for build
-set(CMAKE_MACOSX_RPATH 1)
-set(CMAKE_BUILD_TYPE Release)
+#set(CMAKE_MACOSX_RPATH 1)
+#set(CMAKE_BUILD_TYPE Release)
 
 set(libsocket_PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libsocket)
 set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
