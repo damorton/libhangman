@@ -5,7 +5,7 @@ include(ExternalProject)
 # Dependencies
 # libsocket
 set(libsocket_PREFIX ${CMAKE_BINARY_DIR}/libsocket)
-set(libsocket_SOURCE_DIR ${CMAKE_BINARY_DIR}/external/libsocket)
+set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
 
 ExternalProject_Add(libsocket
     PREFIX ${libsocket_PREFIX}
