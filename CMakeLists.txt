@@ -40,7 +40,7 @@ add_library(hangman SHARED ${SOURCES})
 add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
-target_link_libraries(hangman external/libsocket/lib/${PROJECT_LINK_LIBS})
+target_link_libraries(hangman ${PROJECT_LINK_LIBS})
 
 # Install the library to /usr/local/lib
 #install(TARGETS hangman DESTINATION lib)
