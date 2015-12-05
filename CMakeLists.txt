@@ -2,19 +2,16 @@ cmake_minimum_required(VERSION 2.8)
 project(libhangman)
 include(ExternalProject)
 
-# Dependencies
-# libsocket
-set(libsocket_PREFIX ${CMAKE_BINARY_DIR}/libsocket)
-set(libsocket_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/libsocket)
-
+# ${CMAKE_BINARY_DIR} is root of project - hangman-udp/
 ExternalProject_Add(libsocket
-    PREFIX ${libsocket_PREFIX}
+    PREFIX ${CMAKE_BINARY_DIR}/build/libsocket
     GIT_REPOSITORY https://github.com/damorton/libsocket.git
     INSTALL_COMMAND ""
-    SOURCE_DIR ${libsocket_SOURCE_DIR}
+    BINARY_DIR ${CMAKE_BINARY_DIR}/external/libsocket
+    SOURCE_DIR ${CMAKE_BINARY_DIR}/external/libsocket
 )
 # Include directory for libsocket API
-include_directories(${libsocket_SOURCE_DIR}/include)
+include_directories(${CMAKE_BINARY_DIR}/external/libsocket/include)
 
 # Building libhangman
 
@@ -39,7 +36,7 @@ add_library(hangman SHARED ${SOURCES})
 add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
-target_link_libraries(hangman ${libsocket_SOURCE_DIR}/lib/${PROJECT_LINK_LIBS})
+target_link_libraries(hangman ${CMAKE_BINARY_DIR}/external/libsocket/lib/${PROJECT_LINK_LIBS})
 
 # Install the library to /usr/local/lib
 #install(TARGETS hangman DESTINATION lib)
