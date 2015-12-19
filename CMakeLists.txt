@@ -37,6 +37,3 @@ add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
 target_link_libraries(hangman ${CMAKE_BINARY_DIR}/external/libsocket/lib/${PROJECT_LINK_LIBS})
-
-# Install the library to /usr/local/lib
-#install(TARGETS hangman DESTINATION lib)
