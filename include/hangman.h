@@ -17,7 +17,7 @@
 #define MAX_GAME_SESSIONS 10 // Number of game slots available on the server
 
 // Networking dependency using libsocket
-#include "../external/libsocket/include/socket.h"
+#include "socket.h"
 
 // Forward declaration of GameSession struct
 struct GameSession;
