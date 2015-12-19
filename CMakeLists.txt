@@ -12,6 +12,7 @@ ExternalProject_Add(libsocket
 )
 # Include directory for libsocket API
 include_directories(${CMAKE_BINARY_DIR}/external/libsocket/include)
+include_directories(${CMAKE_BINARY_DIR}/include)
 
 # Building libhangman
 
@@ -27,7 +28,10 @@ else()
 endif()
 
 # Build the library into the lib folder
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+link_directories(external/libsocket/)
 
 # Create shared library
 add_library(hangman SHARED ${SOURCES})
@@ -36,4 +40,5 @@ add_library(hangman SHARED ${SOURCES})
 add_dependencies(hangman libsocket)
 
 # Link dependency library libsocket
-target_link_libraries(hangman ${CMAKE_BINARY_DIR}/external/libsocket/lib/${PROJECT_LINK_LIBS})
+#target_link_libraries(hangman ${CMAKE_BINARY_DIR}/external/libsocket/lib/${PROJECT_LINK_LIBS})
+target_link_libraries(hangman ${PROJECT_LINK_LIBS})
