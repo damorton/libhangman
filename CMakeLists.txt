@@ -10,8 +10,6 @@ ExternalProject_Add(libsocket
     SOURCE_DIR ${CMAKE_BINARY_DIR}/external/libsocket
 )
 
-include_directories(${CMAKE_BINARY_DIR}/include)
-
 set(SOURCES src/hangman.c)
 
 if(UNIX AND NOT APPLE)
