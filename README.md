@@ -5,11 +5,8 @@ Libhangman is a library used for creating networked Hangman games.
 ## Build
 
 ```
-$ mkdir build
-$ cd build
-$ cmake ..
+$ cmake .
 $ make
-$ make install
 ```
 
 # Dependencies
